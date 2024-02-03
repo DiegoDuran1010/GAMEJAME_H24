@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
             monAnim.SetBool("isWalking", true);
             Quaternion nouvelleRotation = Quaternion.LookRotation(direction, Vector3.up);
             rb_joueur.MoveRotation(nouvelleRotation);
-            rb_joueur.AddForce(direction * speed);
+            rb_joueur.AddForce(direction * speed, ForceMode.Impulse);
         }
         else
         {
