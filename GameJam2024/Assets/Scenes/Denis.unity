@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &576409444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 383348041}
   speed: 2
-  minDistance: 0
+  minDistance: 1
   degats: 10
 --- !u!136 &576409445
 CapsuleCollider:
@@ -591,8 +591,8 @@ GameObject:
   - component: {fileID: 1608347914}
   - component: {fileID: 1608347913}
   - component: {fileID: 1608347912}
-  - component: {fileID: 1608347911}
   - component: {fileID: 1608347910}
+  - component: {fileID: 1608347916}
   m_Layer: 0
   m_Name: EnemyKamikazi
   m_TagString: Untagged
@@ -627,22 +627,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &1608347911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608347909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd740e421ab2fb4a9803c11549444e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObj: {fileID: 383348041}
-  speed: 2
-  minDistance: 0
-  degats: 10
 --- !u!136 &1608347912
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -731,6 +715,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608347916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608347909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748ec349e91c02c40a8351850cd0d0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObj: {fileID: 383348041}
+  speed: 2
+  minDistance: 1
+  degats: 10
 --- !u!1 &2058669691
 GameObject:
   m_ObjectHideFlags: 0
