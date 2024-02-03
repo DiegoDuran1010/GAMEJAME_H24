@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -16,23 +18,38 @@ public class Player : MonoBehaviour
     public float forceMagnitude = 10f;
     public float destructionTime = 5f;
     public int pointsVie = 5;
-
+    public Animator monAnim;
+    private bool bouge = false;
+    
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         rb_joueur = GetComponent<Rigidbody>();
         rb_joueur.freezeRotation = true;
+        monAnim = GetComponent<Animator>();
+        
     }
 
 
     void Update()
     {
+       
         MouvementJoueur();
-        if (Input.GetMouseButtonDown(0))
+        if ((Input.GetMouseButtonDown(0)) )
         {
+            monAnim.SetBool("isFire",true);
             Tirer();
         }
+        else
+        {
+            monAnim.SetBool("isFire",false);
+        }
+        
     }
+
+
+    
+
 
     public void SubirDegats(int degats)
     {
@@ -57,11 +74,13 @@ public class Player : MonoBehaviour
 
         if (rb != null)
         {
+            
             //Ajoute une force dans la direction du joueur
             rb.AddForce(transform.forward * forceMagnitude, ForceMode.Impulse);
         }
         else
         {
+            
             Debug.LogError("Le bullet doit avoir un component Rigidbody");
         }
 
@@ -70,6 +89,7 @@ public class Player : MonoBehaviour
 
     void MouvementJoueur()
     {
+        bouge = true;
         Vector3 direction = Vector3.zero;
         if (Input.GetKey(KeyCode.W))
         {
@@ -83,11 +103,13 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+
             direction += Vector3.left;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
+
             direction += Vector3.right;
         }
 
@@ -95,9 +117,15 @@ public class Player : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
+            monAnim.SetBool("isWalking", true);
             Quaternion nouvelleRotation = Quaternion.LookRotation(direction, Vector3.up);
             rb_joueur.MoveRotation(nouvelleRotation);
             rb_joueur.AddForce(direction * speed);
+        }
+        else
+        {
+            bouge = false;
+            monAnim.SetBool("isWalking",false);
         }
     }
 }
