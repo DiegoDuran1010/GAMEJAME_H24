@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class enemyKamikazi : MonoBehaviour {
@@ -9,9 +10,12 @@ public class enemyKamikazi : MonoBehaviour {
     public int degats = 2;
 
     public int vieEnemy = 5;
+    private Animator anim;
 
     private void Start() {
         targetObj = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        anim = GetComponent<Animator>();
+        //anim.Play("")
     }
 
     private void Update() {
