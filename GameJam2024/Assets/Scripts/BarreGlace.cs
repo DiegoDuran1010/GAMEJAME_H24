@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,21 +7,26 @@ public class BarreGlace : MonoBehaviour
 {
     public float glace = 50f;
     public float maxGlace = 50f;
-
+    public float valeurInitiale;
     public Image barreGlaceImage;
+
+    private void Start()
+    {
+        valeurInitiale = barreGlaceImage.fillAmount;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        barreGlaceImage.fillAmount = glace / maxGlace;  
+     
 
-        if(glace > maxGlace)
+        if (Input.GetMouseButton(0))
         {
-            glace = maxGlace;
+            
         }
-        if(glace < 0) 
-        { 
-            glace = 0f;
-        }
+        
+
+
+
     }
 }

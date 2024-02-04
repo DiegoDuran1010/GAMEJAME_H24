@@ -50,6 +50,7 @@
     <Compile Include="Assets/Scripts/GestionCoeur.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
     <Compile Include="Assets/Scripts/SuivisCamera.cs" />
+    <Compile Include="Assets/Scripts/BarreGlace.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2022.3.19f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
     </Reference>
