@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
-using Image = UnityEngine.UI.Image;
+
 
 public class GestionFlocon : MonoBehaviour
 {
