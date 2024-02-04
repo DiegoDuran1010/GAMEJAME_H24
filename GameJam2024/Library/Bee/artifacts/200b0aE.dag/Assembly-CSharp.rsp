@@ -363,6 +363,7 @@
 "Assets/Scripts/enemySystems.cs"
 "Assets/Scripts/Footsteps.cs"
 "Assets/Scripts/GestionCoeur.cs"
+"Assets/Scripts/GestionFlocon.cs"
 "Assets/Scripts/GestionUI.cs"
 "Assets/Scripts/GestionVie.cs"
 "Assets/Scripts/MenuButtons.cs"

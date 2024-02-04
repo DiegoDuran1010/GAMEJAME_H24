@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ammoNeiger : MonoBehaviour
 {
+    public float pointsAmmo = 100f;
+
+    public float ammoActuelle;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ammoActuelle = pointsAmmo;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GagnerNeige()
     {
-        
+        ammoActuelle += 0.5f;
+        print(ammoActuelle);
     }
 
     private void OnTriggerEnter(Collider other) {
