@@ -27,7 +27,12 @@ public class GestionVie : MonoBehaviour
 
     public void GagnerPointVie()
     {
-        pointsVie += 1;
+        if (pointsVie < pointsMax)
+        {
+            pointsVie += 1;
+        }
+
+
         print(pointsVie);
     }
 

@@ -55,7 +55,10 @@
     <Compile Include="Assets/Scripts/GestionUI.cs" />
     <Compile Include="Assets/Scripts/GestionCoeur.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
+    <Compile Include="Assets/Scripts/GestionFlocon.cs" />
+    <Compile Include="Assets/flocon.cs" />
     <Compile Include="Assets/Scripts/SuivisCamera.cs" />
+    <Compile Include="Assets/Scripts/Footsteps.cs" />
     <Compile Include="Assets/Scripts/BarreGlace.cs" />
     <Compile Include="Assets/Scripts/MenuButtons.cs" />
     <None Include="Library/PackageCache/com.unity.settings-manager@2.0.1/package.json" />
