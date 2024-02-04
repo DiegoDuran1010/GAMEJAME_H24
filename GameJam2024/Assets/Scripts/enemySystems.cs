@@ -9,6 +9,8 @@ public class NewBehaviourScript : MonoBehaviour {
     public float minDistance = 0f;
     public int degats = 10;
 
+    public int vieEnemy = 10;
+
     private void Start() {
         targetObj = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
@@ -25,7 +27,12 @@ public class NewBehaviourScript : MonoBehaviour {
             print("DAMAGE");
 
             //other.GetComponent<Joueur>().SubirDegats(degats);
-
+        }
+        if (other.CompareTag("Bullet")) {
+            vieEnemy -= 2;
+            if (vieEnemy <= 0) {
+                Destroy(this.gameObject, 0.5f);
+            }
         }
     }
 
