@@ -1,38 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GestionVie : MonoBehaviour
 {
-    public int pointsVie = 3;
+    public int pointsVie = 3, pointsMax = 3;
+    public Image[] coeur;
+    public Sprite hearts;
+    public Sprite emptyHeart;
 
-    private int pointsVieActuelle;
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        pointsVieActuelle = pointsVie;
+        foreach (Image img in coeur)
+        {
+            img.sprite = emptyHeart;
+        }
+
+        for (int i = 0; i < pointsVie; i++)
+        {
+            coeur[i].sprite = hearts;
+        }
     }
 
     public void GagnerPointVie()
     {
-        pointsVieActuelle += 1;
-        print(pointsVieActuelle);
+        pointsVie += 1;
+        print(pointsVie);
     }
 
-    public void SubirDegats(int degats)
+    public void PerdreVie()
     {
-        pointsVie -= degats;
-
-        if (pointsVie <= 0)
-        {
-            Mourir();
-        }
-    }
-
-    private void Mourir()
-    {
-        gameObject.SetActive(false);
-        //faut gerer le gameover ici
+        pointsVie -= 1;
     }
 }
