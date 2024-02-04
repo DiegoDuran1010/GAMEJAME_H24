@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class enemyKamikazi : MonoBehaviour {
     public Transform targetObj;
+    public Animator anim;
     public float speed;
     public float minDistance = 0f;
-    public int degats = 2;
+    public int degats = 10;
 
     public int vieEnemy = 5;
-    private Animator anim;
 
     private void Start() {
-        targetObj = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         anim = GetComponent<Animator>();
-        //anim.Play("")
+        targetObj = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void Update() {
@@ -27,7 +25,7 @@ public class enemyKamikazi : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            //other.GetComponent<GestionVie>().PerdreVie(degats);
+                other.GetComponent<GestionVie>().PerdreVie();
 
             // Destroy after explosion
             Destroy(this.gameObject, 2f);
