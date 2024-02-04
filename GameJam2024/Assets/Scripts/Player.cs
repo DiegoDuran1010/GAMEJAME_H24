@@ -44,8 +44,10 @@ public class Player : MonoBehaviour
         if ((Input.GetMouseButtonDown(0)) )
         {
             monAnim.SetBool("isFire",true);
+            
             monImage.fillAmount -= speedAmo * Time.deltaTime;
             monImage.fillAmount = Mathf.Max(monImage.fillAmount, 0f);
+            
             if (monImage.fillAmount == 0)
             {
                 monAnim.SetBool("isFire",false);
@@ -67,22 +69,7 @@ public class Player : MonoBehaviour
     
 
 
-    public void SubirDegats(int degats)
-    {
-        pointsVie -= degats;
-
-        if (pointsVie <= 0)
-        {
-            Mourir();
-        }
-    }
-
-    private void Mourir()
-    {
-        gameObject.SetActive(false);
-        //faut gerer le gameover ici
-    }
-
+    
     void Tirer()
     {
         GameObject sphere = Instantiate(bullet, transform.position, transform.rotation);

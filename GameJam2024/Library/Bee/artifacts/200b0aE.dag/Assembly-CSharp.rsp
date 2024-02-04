@@ -356,11 +356,18 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.19f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.19f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/ammoNeiger.cs"
 "Assets/Scripts/BarreGlace.cs"
+"Assets/Scripts/enemyKamikazi.cs"
+"Assets/Scripts/EnemyKamiSpawner.cs"
+"Assets/Scripts/EnemySpawner.cs"
+"Assets/Scripts/enemySystems.cs"
 "Assets/Scripts/GestionCoeur.cs"
 "Assets/Scripts/GestionUI.cs"
 "Assets/Scripts/GestionVie.cs"
+"Assets/Scripts/MenuButtons.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/playerTest.cs"
 "Assets/Scripts/SuivisCamera.cs"
 -langversion:9.0
 
