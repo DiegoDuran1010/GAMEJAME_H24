@@ -6,7 +6,7 @@ public class enemyKamikazi : MonoBehaviour {
     public Transform targetObj;
     public float speed;
     public float minDistance = 0f;
-    public int degats = 10;
+    public int degats = 2;
 
     public int vieEnemy = 5;
 
@@ -23,7 +23,7 @@ public class enemyKamikazi : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            other.GetComponent<Player>().SubirDegats(degats);
+            //other.GetComponent<GestionVie>().PerdreVie(degats);
 
             // Destroy after explosion
             Destroy(this.gameObject, 2f);

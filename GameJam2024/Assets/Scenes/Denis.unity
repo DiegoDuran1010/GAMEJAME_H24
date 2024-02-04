@@ -268,15 +268,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717078159}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748b9beda817b1b4d8136cb8e7e4734b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6020622073149172204, guid: 2933ca6a62846c74fb2387aa5eac4ce2, type: 3}
-  numberOfEnemies: 15
-  spawnRadius: 50
-  spawnDelay: 5
+  numberOfEnemies: 5
+  totalRounds: 5
+  spawnRadius: 30
+  spawnDelay: 2
+  timeBetweenRounds: 10
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -323,7 +325,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717078159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59c82161fb822b84b8b4b6e3f045c4c1, type: 3}
   m_Name: 

@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour {
     public Transform targetObj;
     public float speed;
     public float minDistance = 0f;
-    public int degats = 10;
+    public int degats = 1;
 
     public int vieEnemy = 10;
 
@@ -24,7 +24,7 @@ public class NewBehaviourScript : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            other.GetComponent<Player>().SubirDegats(degats);
+            //other.GetComponent<GestionVie>().PerdreVie(degats);
         }
         if (other.CompareTag("Bullet")) {
             vieEnemy -= 2;
