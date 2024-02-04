@@ -24,7 +24,7 @@ public class NewBehaviourScript : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            //other.GetComponent<Joueur>().SubirDegats(degats);
+            other.GetComponent<Player>().SubirDegats(degats);
         }
         if (other.CompareTag("Bullet")) {
             vieEnemy -= 2;

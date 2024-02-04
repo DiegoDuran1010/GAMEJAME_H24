@@ -5,7 +5,6 @@ using UnityEngine;
 public class ammoSpawner : MonoBehaviour {
     public GameObject ammoPrefab;
     public int maxAmmoCount = 2;
-    //public int numberOfAmmo = 5;
     public float spawnRadius = 10f;
     public float spawnDelay = 1f; // Adjust the delay between each enemy spawn
     public LayerMask obstacleLayer; // Layer for obstacles
