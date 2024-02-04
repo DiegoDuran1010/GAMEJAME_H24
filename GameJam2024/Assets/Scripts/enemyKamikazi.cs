@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyKamikazi : MonoBehaviour {
     public Transform targetObj;
+    public Animator anim;
     public float speed;
     public float minDistance = 0f;
     public int degats = 10;
@@ -11,6 +12,7 @@ public class enemyKamikazi : MonoBehaviour {
     public int vieEnemy = 5;
 
     private void Start() {
+        anim = GetComponent<Animator>();
         targetObj = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -23,7 +25,7 @@ public class enemyKamikazi : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            //other.GetComponent<Joueur>().SubirDegats(degats);
+                other.GetComponent<GestionVie>().PerdreVie();
 
             // Destroy after explosion
             Destroy(this.gameObject, 2f);
