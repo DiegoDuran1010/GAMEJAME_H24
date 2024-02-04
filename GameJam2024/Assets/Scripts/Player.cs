@@ -6,12 +6,14 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
     private CharacterController characterController;
     private Rigidbody rb_joueur;
-    public float speed = 5f;
+    public float speed = 5f,speedAmo;
     public float smooth = 0.05f;
     private float _currentVelocity;
     public GameObject bullet;
@@ -20,6 +22,10 @@ public class Player : MonoBehaviour
     public int pointsVie = 5;
     public Animator monAnim;
     private bool bouge = false;
+    public float forceMouvement = 5f;
+    public float forceDash = 10f;
+    private bool enDash = false;
+    public Image monImage;
     
     void Start()
     {
@@ -38,7 +44,17 @@ public class Player : MonoBehaviour
         if ((Input.GetMouseButtonDown(0)) )
         {
             monAnim.SetBool("isFire",true);
-            Tirer();
+            monImage.fillAmount -= speedAmo * Time.deltaTime;
+            monImage.fillAmount = Mathf.Max(monImage.fillAmount, 0f);
+            if (monImage.fillAmount == 0)
+            {
+                monAnim.SetBool("isFire",false);
+            }
+            else
+            {
+                Tirer(); 
+            }
+            
         }
         else
         {
@@ -69,14 +85,15 @@ public class Player : MonoBehaviour
 
     void Tirer()
     {
-        GameObject sphere = Instantiate(bullet, transform.position, Quaternion.identity);
+        GameObject sphere = Instantiate(bullet, transform.position, transform.rotation);
         Rigidbody rb = sphere.GetComponent<Rigidbody>();
+        Vector3 directionTir = transform.forward;
 
         if (rb != null)
         {
             
             //Ajoute une force dans la direction du joueur
-            rb.AddForce(transform.forward * forceMagnitude, ForceMode.Impulse);
+            rb.AddForce(directionTir * forceMagnitude, ForceMode.Impulse);
         }
         else
         {
@@ -113,6 +130,12 @@ public class Player : MonoBehaviour
             direction += Vector3.right;
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb_joueur.AddForce(transform.forward *forceDash, ForceMode.Impulse);
+            enDash = true;
+            rb_joueur.AddForce(transform.forward * forceMouvement, ForceMode.VelocityChange);
+        }
         direction = direction.normalized;
 
         if (direction.magnitude >= 0.1f)
@@ -120,12 +143,26 @@ public class Player : MonoBehaviour
             monAnim.SetBool("isWalking", true);
             Quaternion nouvelleRotation = Quaternion.LookRotation(direction, Vector3.up);
             rb_joueur.MoveRotation(nouvelleRotation);
-            rb_joueur.AddForce(direction * speed);
+            rb_joueur.AddForce(direction *speed ,ForceMode.Impulse);
         }
         else
         {
             bouge = false;
             monAnim.SetBool("isWalking",false);
         }
+    }
+
+     void FixedUpdate()
+    {
+        if (enDash)
+        {
+            StartCoroutine(ResetDash());
+        }
+    }
+
+    private IEnumerator ResetDash()
+    {
+        yield return new WaitForSeconds(1f);
+        enDash = false;
     }
 }
