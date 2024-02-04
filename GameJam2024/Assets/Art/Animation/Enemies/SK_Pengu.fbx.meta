@@ -3,7 +3,12 @@ guid: 08e05eeb3c90de44282d2ead65896b23
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pengu
+    second: {fileID: 2100000, guid: 35c7253074717184ca4d32154e7c919b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

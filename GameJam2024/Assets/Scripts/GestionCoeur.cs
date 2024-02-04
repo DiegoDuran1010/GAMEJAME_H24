@@ -6,6 +6,8 @@ using UnityEngine;
 public class GestionCoeur : MonoBehaviour
 {
     public int gainDeVie = 1;
+    public AudioSource src;
+    public AudioClip sfx;
 
     void OnTriggerEnter(Collider other)
     {
@@ -13,10 +15,17 @@ public class GestionCoeur : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            //sound effect
+            src.clip = sfx;
+            src.Play();
+
             if (vie != null)
             {
                 vie.GagnerPointVie();
-                Destroy(gameObject);
+                if (vie.pointsVie < vie.pointsMax)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fec9fe99294db864fb66af27894b87a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.9837332
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fec9fe99294db864fb66af27894b87a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fec9fe99294db864fb66af27894b87a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.018545628
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fec9fe99294db864fb66af27894b87a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -136,6 +136,8 @@ MonoBehaviour:
   forceMouvement: 1.5
   forceDash: 1
   monImage: {fileID: 0}
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!136 &5006071179708325119
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -225,3 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsVie: 5
+  pointsMax: 3
+  coeur: []
+  hearts: {fileID: 0}
+  emptyHeart: {fileID: 0}

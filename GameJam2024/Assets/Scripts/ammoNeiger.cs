@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class ammoNeiger : MonoBehaviour
 {
-    private ammoSpawner ammoSpawner;
-    private Player player;
+    public float pointsAmmo = 100f;
+
+    public float ammoActuelle;
+
     // Start is called before the first frame update
     void Start()
     {
-        ammoSpawner = GetComponent<ammoSpawner>();
-
-        if (ammoSpawner == null) {
-            ammoSpawner = FindAnyObjectByType<ammoSpawner>();
-        }
+        ammoActuelle = pointsAmmo;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GagnerNeige()
     {
-        
+        ammoActuelle += 0.5f;
+        print(ammoActuelle);
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) 
         {
             Destroy(this.gameObject, 0);
-            ammoSpawner.AmmoCollected();
-            player.ajouteMunition();
         }
     }
 }
