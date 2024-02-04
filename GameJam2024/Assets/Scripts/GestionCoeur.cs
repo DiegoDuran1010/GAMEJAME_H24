@@ -16,7 +16,10 @@ public class GestionCoeur : MonoBehaviour
             if (vie != null)
             {
                 vie.GagnerPointVie();
-                Destroy(gameObject);
+                if (vie.pointsVie < vie.pointsMax)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
