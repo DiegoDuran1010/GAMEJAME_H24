@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     public float forceDash = 10f;
     private bool enDash = false;
     public Image monImage;
+    public AudioSource src;
+    public AudioClip sfx1;
     
     void Start()
     {
@@ -62,12 +64,27 @@ public class Player : MonoBehaviour
         {
             monAnim.SetBool("isFire",false);
         }
-        
+        fillImageFlocon();
     }
 
 
-    
 
+    public void fillImageFlocon()
+    {
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Flocon"))
+            {
+
+                if (this.gameObject != null)
+                {
+
+                    monImage.fillAmount += 2f * Time.deltaTime;
+                    monImage.fillAmount = Mathf.Max(monImage.fillAmount, 2f);
+                }
+            }
+        }
+    }
 
     
     void Tirer()
@@ -75,6 +92,8 @@ public class Player : MonoBehaviour
         GameObject sphere = Instantiate(bullet, transform.position, transform.rotation);
         Rigidbody rb = sphere.GetComponent<Rigidbody>();
         Vector3 directionTir = transform.forward;
+        src.clip = sfx1;
+        src.Play();
 
         if (rb != null)
         {
