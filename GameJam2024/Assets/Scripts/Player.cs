@@ -64,28 +64,22 @@ public class Player : MonoBehaviour
         {
             monAnim.SetBool("isFire",false);
         }
-        fillImageFlocon();
+        
     }
-
-
-
-    public void fillImageFlocon()
+    void OnTriggerEnter(Collider other)
     {
-        void OnTriggerEnter(Collider other)
+        if (other.CompareTag("Flocon"))
         {
-            if (other.CompareTag("Flocon"))
-            {
-
-                if (this.gameObject != null)
-                {
-
-                    monImage.fillAmount += 2f * Time.deltaTime;
-                    monImage.fillAmount = Mathf.Max(monImage.fillAmount, 2f);
-                }
-            }
+            monImage.fillAmount += 2f * Time.deltaTime;
+            //monImage.fillAmount = Mathf.Max(monImage.fillAmount, 2f);
         }
     }
 
+
+    
+    
+       
+    
     
     void Tirer()
     {
