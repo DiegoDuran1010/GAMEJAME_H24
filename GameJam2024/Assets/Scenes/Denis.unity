@@ -278,6 +278,7 @@ MonoBehaviour:
   speed: 2
   minDistance: 1
   degats: 10
+  vieEnemy: 10
 --- !u!136 &576409445
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -731,6 +732,7 @@ MonoBehaviour:
   speed: 2
   minDistance: 1
   degats: 10
+  vieEnemy: 5
 --- !u!1 &2058669691
 GameObject:
   m_ObjectHideFlags: 0

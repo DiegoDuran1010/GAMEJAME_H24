@@ -8,7 +8,7 @@ public class enemyKamikazi : MonoBehaviour {
     public float minDistance = 0f;
     public int degats = 10;
 
-    public int vieEnemy = 10;
+    public int vieEnemy = 5;
 
     private void Start() {
         targetObj = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
