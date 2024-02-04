@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ammoNeiger : MonoBehaviour
 {
+    private ammoSpawner ammoSpawner;
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ammoSpawner = GetComponent<ammoSpawner>();
+
+        if (ammoSpawner == null) {
+            ammoSpawner = FindAnyObjectByType<ammoSpawner>();
+        }
     }
 
     // Update is called once per frame
@@ -20,6 +26,8 @@ public class ammoNeiger : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             Destroy(this.gameObject, 0);
+            ammoSpawner.AmmoCollected();
+            player.ajouteMunition();
         }
     }
 }

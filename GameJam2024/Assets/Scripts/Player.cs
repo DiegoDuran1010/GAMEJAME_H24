@@ -63,7 +63,11 @@ public class Player : MonoBehaviour
         
     }
 
-
+    public void ajouteMunition()
+    {
+        monImage.fillAmount += speedAmo * Time.deltaTime;
+        monImage.fillAmount = Mathf.Max(monImage.fillAmount, 0f);
+    }
     
 
 
