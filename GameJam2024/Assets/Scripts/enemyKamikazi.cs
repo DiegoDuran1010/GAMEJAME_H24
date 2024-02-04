@@ -23,8 +23,6 @@ public class enemyKamikazi : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            print("DAMAGE");
-
             //other.GetComponent<Joueur>().SubirDegats(degats);
 
             // Destroy after explosion
