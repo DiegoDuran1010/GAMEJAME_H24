@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\playerTest.cs" />
     <Compile Include="Assets\Scripts\enemySystems.cs" />
     <Compile Include="Assets\Scripts\enemyKamikazi.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\GestionUI.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SuivisCamera.cs" />
